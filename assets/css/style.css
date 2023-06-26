@@ -7,6 +7,10 @@
 
 body {
     background-color: #bec5d7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
 }
 
 #container {
@@ -14,7 +18,7 @@ body {
     background-color: #fff;
     min-height: 720px;
     border-radius: 25px;
-    margin: 30px auto;
+    margin: 30px auto 0px auto;
     display: flex;
 }
 
@@ -23,6 +27,7 @@ body {
     margin-bottom: 50px;
     font-weight: 500;
     font-family: poppins;
+    user-select: none;
 }
 
 #left-section {
@@ -59,7 +64,7 @@ body {
     transform: rotate(135deg) scale(1.1);
 }
 
-.hide {
+.show {
     transform: translateX(0%) !important;
 }
 
@@ -108,7 +113,7 @@ body {
 
 /* Color's father */
 
-#color-palette {
+#colors {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -117,7 +122,7 @@ body {
     overflow: hidden;
 }
 
-#color-palette>* {
+#colors>* {
     transform: translateY(-2000%);
 }
 
@@ -128,6 +133,8 @@ body {
 
 #right-title {
     margin: 30px 0px 0px 60px;
+    user-select: none;
+    display: flex;
 }
 
 #right-title h2 {
@@ -168,6 +175,7 @@ body {
     margin-top: 10px;
     font-size: 18px;
     font-family: poppins;
+    color: #3a3a3a;
 }
 
 #icons {
@@ -190,24 +198,62 @@ body {
     background-color: #444444;
 }
 
+.note i:active {
+    scale:0.8;
+}
+
 .note i:first-of-type:hover{
-    color:rgb(41, 199, 35);
+    color:#29c723;
+    background-color: #31291D;
 }
 
 .note i:last-of-type:hover{
-    color:red
+    color:red;
+    background-color: #31291D;
 }
 
-.note input {
-    color: #fff;
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: rgb(116, 116, 116);
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 6px;
+    background-color:rgb(219, 219, 219) ;
+}
+
+#alerts {
+    margin-left: 200px;
+    position: relative;
+    margin-top: 1px;
+}
+
+.alert {
     font-family: poppins;
-    padding: 6px 32px;
-    border-radius: 4px;
-    background: -webkit-linear-gradient(0deg, #8490ff 0%, #62bdfc 100%);
-    margin-left: 30px;
-    font-size: 15px;
-    border: none;
-    cursor: pointer;
-    /* width:60px; */
-    height: 40px;
+    font-size: 20px;
+    color: #fff;
+    width: 380px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 75px;
+    margin-top: 0px;
+    transition: all 0.4s;
+}
+
+#del-alert {
+    background-color: red;
+    position: absolute;
+}
+
+#save-alert {
+    background-color: #5acf56;
+}
+
+.hideEl {
+    display: none;
 }
