@@ -1,5 +1,7 @@
 let addBtn = document.querySelector('#drop-menu'),
-    colors = document.querySelectorAll('.color')
+    colors = document.querySelectorAll('.color'),
+    noteList = document.querySelector('#note-list'),
+    note = document.querySelector('.note')
 
 addBtn.addEventListener('click', dropMenu)
 
@@ -21,19 +23,69 @@ function dropMenu() {
 }
 
 function saveAndDelAlert() {
-    let deleteBtn = document.querySelector('#icons').children[1]
-
+    console.log(deleteBtn);
     deleteBtn.addEventListener('click', item => {
-        let note = document.querySelector('.note')
-        note.remove()
-
-        delAlert()
+        item.forEach(() => {
+            newNote.remove()
+            delAlert()
+        })
     })
-    let saveBtn = document.querySelector('#icons').children[0]
     saveBtn.addEventListener('click', item => {
-        saveAlert()
+        item.forEach(() => {
+            saveAlert()
+        })
     })
 }
+
+function addNewNotes() {
+    colors.forEach(item => {
+        item.addEventListener('click', () => {
+            let getColor = item.getAttribute('backgroundcolor')
+            note = document.createElement('div')
+            note.classList.add('note')
+            note.setAttribute('style', `background:${getColor}`)
+            note.innerHTML = `
+            <textarea placeholder="Write Here!"></textarea>
+            <div id="icons">
+            <i class="bx bx-save save"></i>
+            <i class="bx bx-trash delete"></i>
+            </div>`
+            noteList.appendChild(note)
+        })
+    })
+
+}
+addNewNotes()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function delAlert() {
     let deleteAlert = document.querySelector("#del-alert");
     if (deleteAlert.classList.contains("hideEl")) {
@@ -53,5 +105,3 @@ function saveAlert() {
         }, 2000);
     }
 }
-
-saveAndDelAlert()
