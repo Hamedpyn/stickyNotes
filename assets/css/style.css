@@ -190,7 +190,7 @@ body {
     height: 45px;
     cursor: pointer;
     color: rgb(209, 209, 209);
-    transition: 0.4s;
+    transition: 0.3s;
     margin-left: 5px;
     display: flex;
     align-items: center;
@@ -198,16 +198,16 @@ body {
     background-color: #444444;
 }
 
-.note i:active {
+#icons i:active {
     scale: 0.8;
 }
 
-#icons i:first-of-type:hover {
+#icons i:first-of-type:hover , #icons i:first-of-type:active {
     color: #29c723;
     background-color: #31291D;
 }
 
-#icons i:last-of-type:hover {
+#icons i:last-of-type:hover , #icons i:last-of-type:active {
     color: red;
     background-color: #31291D;
 }
