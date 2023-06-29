@@ -119,3 +119,5 @@ function saveAlert() {
 }
 
 // TODO : LOCAL STORAGE ...
+
+// ~>    MADE BY @HAMEDPYN    <~
