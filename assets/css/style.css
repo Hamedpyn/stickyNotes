@@ -275,6 +275,9 @@ body {
     .note {
         margin-right: 15px;
     }
+    #alerts {
+        margin-left: 110px;
+    }
 }
 
 @media screen and (max-width:1066px) {
@@ -288,6 +291,11 @@ body {
 
     #right-section {
         width: 850px;
+    }
+
+    .alert {
+       width: 360px;
+       font-size: 19px; 
     }
 
     .note {
@@ -307,6 +315,14 @@ body {
 
     #right-section {
         width: 600px;
+    }
+
+    #alerts {
+        margin-left: 40px;
+    }
+    .alert {
+        width: 350px;
+        font-size: 18px;
     }
 
     .note {
@@ -349,8 +365,6 @@ body {
     .note {
         width: 230px;
         height: 230px;
-        /* margin-left: 5px; */
-        /* margin-right: 25px; */
     }
     .note textarea {
         width: 200px;
@@ -379,12 +393,16 @@ body {
     #right-section {
         width: 600px;
     }
-
     .note {
         width: 210px;
         height: 210px;
-        /* margin-left: 5px; */
-        /* margin-right: 25px; */
+    }
+    #alerts{
+        margin-left: 10px;
+    }
+    .alert {
+        width: 310px;
+        font-size: 17px;
     }
     .note textarea {
         width: 180px;
@@ -417,13 +435,15 @@ body {
     .note {
         width: 200px;
         height: 210px;
-        /* margin-left: 5px; */
-        /* margin-right: 25px; */
     }
     .note textarea {
         margin-left: 10px;
         width: 180px;
         height: 140px;
+    }
+    .alert {
+        width: 280px;
+        font-size: 15px;
     }
     #icons {
         margin-left:95px ;
@@ -446,18 +466,33 @@ body {
 
     #right-section {
         width: 370px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
     }
-
+    #right-title {
+        height:100px ;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
     .note {
         width: 300px;
         height: 300px;
         margin-left: 15px;
-        /* margin-right: 25px; */
     }
     .note textarea {
         margin-left: 15px;
         width: 260px;
         height: 210px;
+    }
+    #alerts{
+        bottom: 30px;
+        right: 30px;
+    }
+    .alert {
+        width: 270px;
+        font-size: 15px;
     }
     #icons {
         margin-left:170px ;
