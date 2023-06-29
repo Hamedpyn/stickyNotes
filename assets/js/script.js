@@ -54,10 +54,7 @@ function saveAndDelAlert() {
             saveAlert()
         })
     })
-    // addNewNotes()
 }
-
-// saveAndDelAlert()
 
 // * function
 // * adding new notes by clicking on each color
@@ -79,6 +76,7 @@ function addNewNotes() {
 
             // pushing notes into the note-list
             noteList.appendChild(newNote)
+
             saveAndDelAlert()
         })
     })
@@ -99,7 +97,7 @@ function delAlert() {
         // after 2s add the class
         setTimeout(function () {
             deleteAlert.classList.add("hideEl");
-        }, 1000);
+        }, 600);
     }
 }
 
@@ -116,6 +114,8 @@ function saveAlert() {
         // after 2s add the class
         setTimeout(function () {
             saveAlert.classList.add("hideEl")
-        }, 1000);
+        }, 600);
     }
 }
+
+// TODO : LOCAL STORAGE ...
