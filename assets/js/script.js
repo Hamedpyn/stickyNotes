@@ -50,7 +50,7 @@ function saveAndDelAlert() {
     })
     let saveBtn = document.querySelectorAll('.save')
     saveBtn.forEach(item => {
-        item.addEventListener( 'click', () => {
+        item.addEventListener('click', () => {
             saveAlert()
         })
     })
@@ -119,5 +119,25 @@ function saveAlert() {
 }
 
 // TODO : LOCAL STORAGE ...
+
+// ! Selecting Variables
+let body = document.body
+themeBtn = document.querySelector('#theme'),
+    changingMode = document.querySelector('#changingMode');
+    
+// * changing mode by clicking on themeBtn [ Moon - Sun ]
+themeBtn.addEventListener('click', () => {
+    // if body has the night mode remove it it it hasn't add iف
+    body.classList.toggle('night-mode')
+    // if it has the night mode class
+    if (body.classList.contains('night-mode')) {
+        // turn it to light mode
+        changingMode.classList.add('bxs-sun')
+        // if it hasn't the night mode
+    } else {
+        // turn it to night mode
+        changingMode.classList.remove('bxs-sun')
+    }
+})
 
 // ~>    MADE BY @HAMEDPYN    <~

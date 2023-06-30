@@ -5,17 +5,42 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
+:root {
+    --color-1: #bec5d7;
+    --color-2: #fff;
+    --color-3: #31291D;
+    --color-4: #000;
+    --color-5: #3a3a3a;
+    --color-6: #444;
+    --color-7: #d1d1d1;
+    --color-8: #fff;
+    --color-9: #f1f3f8;
+}
+
+.night-mode {
+    --color-1 : #424242;
+    --color-2 : #292929 ;
+    --color-3 : #fff;
+    --color-4 : #fff ;
+    --color-5 : #424242;
+    --color-6 : #f1f3f8;
+    --color-7 : #6d6d6d;
+    --color-8 :#000 ;
+    --color-9 :#3a3a3a ;
+}
+
 body {
-    background-color: #bec5d7;
+    background-color: var(--color-1);
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
+    transition: all 0.5s;
 }
 
 #container {
     width: 1300px;
-    background-color: #fff;
+    background-color: var(--color-2);
     min-height: 720px;
     border-radius: 25px;
     margin: 30px auto 0px auto;
@@ -24,10 +49,10 @@ body {
 
 #left-title h4 {
     margin-top: 20px;
-    margin-bottom: 50px;
     font-weight: 500;
     font-family: poppins;
     user-select: none;
+    color: var(--color-4);
 }
 
 #left-section {
@@ -36,15 +61,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-right: 1px solid #f1f3f8;
+    border-right: 1px solid var(--color-9);
 }
 
 #drop-menu i {
     width: 35px;
     height: 35px;
-    background-color: #31291D;
+    background-color: var(--color-3);
     font-size: 20px;
-    color: #fff;
+    color: var(--color-8);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,10 +77,34 @@ body {
     cursor: pointer;
 }
 
+#menu {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 #drop-menu {
     transition: 0.5s;
 }
 
+#theme {
+    margin: 35px auto;
+    transition: 0.3s;
+}
+
+#theme i {
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background-color: var(--color-1);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s
+}
 
 #plus-icon:active {
     transform: scale(0.9);
@@ -108,7 +157,7 @@ body {
     transition: 0.7s all linear;
 }
 
-/* Color's father */
+/* Color's parent */
 
 #colors {
     display: flex;
@@ -139,6 +188,8 @@ body {
     font-family: poppins;
     font-weight: 500;
     min-height: 100px;
+    color: var(--color-4);
+
 }
 
 #note-list {
@@ -171,7 +222,7 @@ body {
     margin-top: 10px;
     font-size: 18px;
     font-family: poppins;
-    color: #3a3a3a;
+    color: var(--color-5);
 }
 
 ::placeholder {
@@ -182,6 +233,7 @@ body {
     display: flex;
     margin-left: 130px;
 }
+
 /* * */
 #icons i {
     font-size: 25px;
@@ -189,27 +241,29 @@ body {
     width: 45px;
     height: 45px;
     cursor: pointer;
-    color: rgb(209, 209, 209);
+    color: var(--color-7);
     transition: 0.3s;
     margin-left: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #444444;
+    background-color: var(--color-6);
 }
 
 #icons i:active {
     scale: 0.8;
 }
 
-#icons i:first-of-type:hover , #icons i:first-of-type:active {
+#icons i:first-of-type:hover,
+#icons i:first-of-type:active {
     color: #29c723;
-    background-color: #31291D;
+    background-color: var(--color-3);
 }
 
-#icons i:last-of-type:hover , #icons i:last-of-type:active {
+#icons i:last-of-type:hover,
+#icons i:last-of-type:active {
     color: red;
-    background-color: #31291D;
+    background-color: var(--color-3);
 }
 
 ::-webkit-scrollbar {
@@ -218,12 +272,11 @@ body {
 
 ::-webkit-scrollbar-thumb {
     border-radius: 6px;
-    background-color: rgb(138, 138, 138);
+    background-color: #8a8a8a;
 }
 
 ::-webkit-scrollbar-track {
     border-radius: 6px;
-    /* background-color:rgb(219, 219, 219) ; */
 }
 
 #alerts {
@@ -275,6 +328,7 @@ body {
     .note {
         margin-right: 15px;
     }
+
     #alerts {
         margin-left: 110px;
     }
@@ -294,8 +348,8 @@ body {
     }
 
     .alert {
-       width: 360px;
-       font-size: 19px; 
+        width: 360px;
+        font-size: 19px;
     }
 
     .note {
@@ -320,6 +374,7 @@ body {
     #alerts {
         margin-left: 40px;
     }
+
     .alert {
         width: 350px;
         font-size: 18px;
@@ -366,16 +421,19 @@ body {
         width: 230px;
         height: 230px;
     }
+
     .note textarea {
         width: 200px;
         height: 160px;
     }
+
     #icons {
-        margin-left:120px ;
+        margin-left: 120px;
     }
-    #icons > * {
-        width:40px ;
-        height:40px ;
+
+    #icons>* {
+        width: 40px;
+        height: 40px;
         font-size: 20px;
         margin-top: -1px;
     }
@@ -393,27 +451,33 @@ body {
     #right-section {
         width: 600px;
     }
+
     .note {
         width: 210px;
         height: 210px;
     }
-    #alerts{
+
+    #alerts {
         margin-left: 10px;
     }
+
     .alert {
         width: 310px;
         font-size: 17px;
     }
+
     .note textarea {
         width: 180px;
         height: 140px;
     }
+
     #icons {
-        margin-left:105px ;
+        margin-left: 105px;
     }
-    #icons > * {
-        width:30px ;
-        height:30px ;
+
+    #icons>* {
+        width: 30px;
+        height: 30px;
         font-size: 15px;
         margin-top: -1px;
     }
@@ -436,21 +500,25 @@ body {
         width: 200px;
         height: 210px;
     }
+
     .note textarea {
         margin-left: 10px;
         width: 180px;
         height: 140px;
     }
+
     .alert {
         width: 280px;
         font-size: 15px;
     }
+
     #icons {
-        margin-left:95px ;
+        margin-left: 95px;
     }
-    #icons > * {
-        width:30px ;
-        height:30px ;
+
+    #icons>* {
+        width: 30px;
+        height: 30px;
         font-size: 15px;
     }
 }
@@ -470,37 +538,43 @@ body {
         flex-direction: column;
         gap: 30px;
     }
+
     #right-title {
-        height:100px ;
+        height: 100px;
         display: flex;
         flex-direction: column;
         position: relative;
     }
+
     .note {
         width: 300px;
         height: 300px;
         margin-left: 15px;
     }
+
     .note textarea {
         margin-left: 15px;
         width: 260px;
         height: 210px;
     }
-    #alerts{
+
+    #alerts {
         bottom: 30px;
         right: 30px;
     }
+
     .alert {
         width: 270px;
         font-size: 15px;
     }
+
     #icons {
-        margin-left:170px ;
+        margin-left: 170px;
     }
+
     #icons i {
-        width:55px ;
-        height:55px ;
+        width: 55px;
+        height: 55px;
         font-size: 30px;
     }
 }
-
