@@ -1,14 +1,27 @@
-// ! Variables
+// ! DOM Selectors
 
 // addBtn [ plus icon ]
 let addBtn = document.querySelector('#drop-menu'),
     // all colors
     colors = document.querySelectorAll('.color'),
     // note-list
-    noteList = document.querySelector('#note-list');
+    noteList = document.querySelector('#note-list'),
+    // all notes
+    note = document.querySelector('.note'),
+    // body
+    body = document.body,
+    //  theme button
+    themeBtn = document.querySelector('#theme')
+// icon's id [ sun - moon ]
+changingMode = document.querySelector('#changingMode');
+
 
 // ? Events
 addBtn.addEventListener('click', dropMenu)
+document.addEventListener('DOMContentLoaded', () => {
+    lightAndDarkMode()
+    addNewNotes()
+})
 
 // * function
 // * showing the colors by clicking on addBtn
@@ -37,6 +50,30 @@ function dropMenu() {
 }
 
 // * function
+// * adding new notes by clicking on each color
+function addNewNotes() {
+    colors.forEach(item => {
+        item.addEventListener('click', () => {
+            let newNote = document.createElement('div')
+            newNote.classList.add('note')
+            // getting bgc from the colors and setting it as the note color
+            let getColor = item.getAttribute('background-color')
+            newNote.setAttribute('style', `background:${getColor}`)
+            // note's html
+            newNote.innerHTML = `
+            <textarea class='text' placeholder="Write Here!"></textarea>
+            <div id="icons">
+            <i class="bx bx-save save"></i>
+            <i class="bx bx-trash delete"></i>
+            </div>`
+            // pushing notes into the note-list
+            noteList.appendChild(newNote)
+            saveAndDelAlert()
+        })
+    })
+}
+
+// * function
 // * removing a note after clicking on deleteBtn
 // * showing del alert after removing a note
 // * showing save alert after clicking on saveBtn
@@ -55,34 +92,6 @@ function saveAndDelAlert() {
         })
     })
 }
-
-// * function
-// * adding new notes by clicking on each color
-function addNewNotes() {
-    colors.forEach(item => {
-        item.addEventListener('click', () => {
-            let newNote = document.createElement('div')
-            newNote.classList.add('note')
-            // getting bgc from the colors and setting it as the note color
-            let getColor = item.getAttribute('background-color')
-            newNote.setAttribute('style', `background:${getColor}`)
-            // note's html
-            newNote.innerHTML = `
-            <textarea placeholder="Write Here!"></textarea>
-            <div id="icons">
-            <i class="bx bx-save save"></i>
-            <i class="bx bx-trash delete"></i>
-            </div>`
-
-            // pushing notes into the note-list
-            noteList.appendChild(newNote)
-
-            saveAndDelAlert()
-        })
-    })
-}
-
-addNewNotes()
 
 // * function
 // * showing a text alert and hiding after 2s
@@ -118,25 +127,38 @@ function saveAlert() {
     }
 }
 
-// TODO : LOCAL STORAGE ...
-
-// ! Selecting Variables
-let body = document.body
-themeBtn = document.querySelector('#theme'),
-    changingMode = document.querySelector('#changingMode');
-    
 // * changing mode by clicking on themeBtn [ Moon - Sun ]
-themeBtn.addEventListener('click', () => {
-    // if body has the night mode remove it it it hasn't add iف
-    body.classList.toggle('night-mode')
-    // if it has the night mode class
-    if (body.classList.contains('night-mode')) {
-        // turn it to light mode
+function lightAndDarkMode() {
+    themeBtn.addEventListener('click', () => {
+        // if body has the dark mode remove it if it doesn't have it add the dark mode
+        body.classList.toggle('dark-mode')
+        // if it has the dark mode class
+        if (body.classList.contains('dark-mode')) {
+            // turn it to light mode
+            changingMode.classList.add('bxs-sun')
+            // set local storage in application as dark mode
+            localStorage.setItem('theme', 'darkMode')
+            // if it hasn't the dark mode
+        } else {
+            // turn it to dark mode
+            changingMode.classList.remove('bxs-sun')
+            // set local storage in application as light mode
+            localStorage.setItem('theme', 'lightMode')
+        }
+    })
+}
+
+// * saving the theme with local storage
+// when the page has been load
+this.addEventListener('load', () => {
+    // get theme from the local storage
+    let savingTheMode = localStorage.getItem('theme')
+    // if theme was dark mode
+    if (savingTheMode === 'darkMode') {
+        // add dark mode class to the body
+        body.classList.add('dark-mode')
+        // add sun icon to the changing mode
         changingMode.classList.add('bxs-sun')
-        // if it hasn't the night mode
-    } else {
-        // turn it to night mode
-        changingMode.classList.remove('bxs-sun')
     }
 })
 

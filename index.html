@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SITE'SS TITLE -->
+    <!-- SITE'S TITLE -->
     <title>StickyNote</title>
     <!-- CSS STYLE -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -16,21 +16,25 @@
 </head>
 
 <body>
-
-
+    <!-- CONTAINER -->
     <div id="container">
+        <!-- LEFT SECTION OF CONTAINER -->
         <div id="left-section">
             <div id="menu">
+                <!-- LEFT SECTION'S TITLE -->
                 <div id="left-title">
                     <h4>Add</h4>
                 </div>
                 <div id="theme">
+                    <!-- CHANGING MODE [ SUN - MOON ] -->
                     <i id="changingMode" class="bx bxs-moon"></i>
                 </div>
+                <!-- DROP MENU -->
                 <div id="drop-menu">
                     <i class="bx bx-plus"></i>
                 </div>
             </div>
+            <!-- DROP MENU'S COLORS -->
             <div id="colors">
                 <div class="color" background-color="#fcbd76"></div>
                 <div class="color" background-color="#eb957d"></div>
@@ -39,19 +43,24 @@
                 <div class="color" background-color="#d4e081"></div>
             </div>
         </div>
+        <!-- RIGHT SECTION'S OF CONTAINER -->
         <div id="right-section">
+            <!-- RIGHT SECTION'S TITLE -->
             <div id="right-title">
                 <h2>Notes</h2>
+                <!-- ALERTS AFTER DELETING AND SAVING NOTES -->
                 <div id="alerts">
                     <div class="alert hideEl" id="del-alert">Note Has Been Successfully Deleted</div>
                     <div class="alert hideEl" id="save-alert">Note Has Been Successfully Saved</div>
                 </div>
             </div>
+            <!-- NOTES WILL appendChild IN NOTE-LIST -->
             <div id="note-list">
             </div>
         </div>
     </div>
     </div>
+    <!-- LINKING JS -->
     <script src="assets/js/script.js"></script>
 </body>
 
