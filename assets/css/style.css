@@ -211,7 +211,7 @@ body {
     margin-bottom: 20px;
 }
 
-.note textarea {
+.text {
     outline: none;
     border: none;
     background: transparent;
@@ -223,6 +223,7 @@ body {
     font-size: 18px;
     font-family: poppins;
     color: var(--color-5);
+    overflow: auto;
 }
 
 ::placeholder {

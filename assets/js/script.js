@@ -60,14 +60,14 @@ function addNewNotes() {
 			newNote.setAttribute("style", `background:${getColor}`);
 			// note's html
 			newNote.innerHTML = `
-            <textarea class="text" placeholder="Write Here!"></textarea>
+            <p contenteditable="true" class="text"></p>
             <div id="icons">
             <i class="bx bx-save save"></i>
             <i class="bx bx-trash delete"></i>
             </div>`;
 			// pushing notes into the note-list
 			noteList.appendChild(newNote);
-			setLocalStorage();
+			// setLocalStorage();
 			saveAndDelAlert();
 		});
 	});
