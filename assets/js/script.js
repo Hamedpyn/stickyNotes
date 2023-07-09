@@ -67,7 +67,7 @@ function addNewNotes() {
             </div>`;
 			// pushing notes into the note-list
 			noteList.appendChild(newNote);
-			// setLocalStorage();
+			setLocalStorage();
 			saveAndDelAlert();
 		});
 	});
